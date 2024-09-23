@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <links>
     <link>
-        <url>https://example.com</url>
-        <description>Example Website</description>
+        <url>https://github.com/psenak1128064/mdfiles/blob/main/ai-ako-vzdelavaci-nastroj/webstranky.md</url>
+        <description>Nástroje</description>
     </link>
     <link>
-        <url>https://github.com</url>
-        <description>GitHub Profile</description>
-    </link>
-    <link>
-        <url>https://twitter.com</url>
-        <description>Twitter</description>
+        <url>https://chatgpt.com/share/66f18afb-a898-8013-83fe-2e2c830065eb</url>
+        <description>Chat s ChatGPT</description>
     </link>
 </links>
