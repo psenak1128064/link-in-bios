@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<links>
+    <link>
+        <url>https://example.com</url>
+        <description>Example Website</description>
+    </link>
+    <link>
+        <url>https://github.com</url>
+        <description>GitHub Profile</description>
+    </link>
+    <link>
+        <url>https://twitter.com</url>
+        <description>Twitter</description>
+    </link>
+</links>

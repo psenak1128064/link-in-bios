@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 1</title>
+    <link rel="stylesheet" href="s.css">
+</head>
+<body>
+    <div id="links">
+        
+    </div>
+    <script>
+        function clicks() {
+            document.querySelectorAll(".link").forEach((el) => {
+                el.onclick = () => {
+                    location.href = el.getAttribute("link")
+                }
+            })
+        }
+        
+        // Function to load XML data
+        function loadXML() {
+            const xhr = new XMLHttpRequest();
+            xhr.open("GET", "ai1.xml", true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    const xmlDoc = xhr.responseXML;
+                    const links = xmlDoc.getElementsByTagName("link");
+                    const linkContainer = document.getElementById("links");
+
+                    let html = "";
+
+                    for (let i = 0; i < links.length; i++) {
+                        const url = links[i].getElementsByTagName("url")[0].childNodes[0].nodeValue;
+                        const description = links[i].getElementsByTagName("description")[0].childNodes[0].nodeValue;
+
+                        let template = '<button class="link" link="__url__"><div class="libl"><br /><b>__desc__</b><br /><p></p></div></button>'
+
+                        let code = template.replace("__url__", url).replace("__desc__", description) + "\n"
+                        html += code
+                    }
+
+                    linkContainer.innerHTML = html
+                    clicks()
+                }
+            };
+            xhr.send();
+        }
+
+        // Load XML when the page loads
+        window.onload = loadXML;
+    </script>
+</body>
+</html>
